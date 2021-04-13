@@ -1,0 +1,33 @@
+<h2>Products</h2>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
+
+<div *ngFor="let product of products">
+  <h3>
+    <a [title]="'i' + product.name + ' details'">{{ product.name }}</a>
+  </h3>
+  <h4>{{ product.price }}</h4>
+  <h5 *ngIf="product.description">
+    {{ product.description.replace('large', 'shitty').replace('great', 'shitty')
+    }}
+  </h5>
+  <button (click)="share(product.name)">
+    Share {{ product.description.toLowerCase() }}
+  </button>
+</div>
+
+<input
+  id="name_here"
+  (keyup)="checkUnique($event)"
+  (click)="getData()"
+  type="text"
+/>
+<p
+  [ngStyle]="{'color': nameValidText == 'Name is taken' || nameValidText == 'Invalid name' ? 'red' : 'green' }"
+>
+  {{ nameValidText }}
+</p>

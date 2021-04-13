@@ -1,0 +1,11 @@
+{
+    "/users": {
+        "target": "https://2b5ca577e247.ngrok.io/users",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug",
+        "pathRewrite": {
+          "^/users": ""
+        },
+    }
+}
